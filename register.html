@@ -1,0 +1,50 @@
+<head>
+	<title>Register GO</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <h1 class="register-title"><img src="pic/logs.png" /></h1>
+
+<form action="login.html" method="post">
+
+  <div class="container">
+    <h2>Create Account </h2>
+    <hr>
+    <a>Please fill in this form to create an account.</a>
+    
+
+    <input type="text" placeholder="Masukkan Nama" name="nama" required>
+
+    <input type="email" placeholder="Masukkan Email" name="email" required>
+
+    <input name="password" id="password" type="password" placeholder="Masukkan Password" onkeyup='check();' required/>
+
+    <input type="password" name="confirm_password" placeholder="Ulangi Password" id="confirm_password"  onkeyup='check();' required/><br>
+    <span id='message'></span>
+
+    <p><input type="checkbox" name="nama_checkbox"/>Saya setuju dengan syarat dan ketentuan</a>.</p>
+    <button type="submit" class="registerbtn"><b>DAFTAR</b></button>
+  </div>
+</form>
+
+  <div class="container signin">
+    <p>Sudah punya akun? <a href="login.html"><b>Masuk</b></a></p>
+    <a href="index.html"><b>Kembali ke Beranda</b></a>
+  </div>
+
+
+<script>
+var check = function() {
+    if (document.getElementById('password').value ==
+      document.getElementById('confirm_password').value) {
+      document.getElementById('message').style.color = 'green';
+      document.getElementById('message').innerHTML = 'Password cocok';
+    } else {
+      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').innerHTML = 'Password tidak cocok';
+    }
+  }
+  </script>
+
+</body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login GO</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <h1 class="register-title"><img src="pic/logsbiru.png" /></h1> <!--bagian atas-->
+  
+    <form action="index.html" method="post"><!--bagian form-->
+    
+      <div class="container">
+        <h2>Selamat Datang Kembali </h2>
+        <hr>
+    
+        <input type="text" placeholder="Masukkan Email" name="email" required>
+    
+        <input type="password" placeholder="Masukkan Password" id="psw" required>
+    
+        <div class=show> <p><input type="checkbox" onclick="myFunction()">Show Password</p></div>
+    
+        <button type="submit" class="registerbtn"><b>MASUK</b></button>
+      </div>
+    </form>
+    
+      <div class="container signin"><!--bagian bawah-->
+          <a href="#"><b>Lupa Password?</b></a>
+        <p>Tidak punya akun? <a href="register.html"><b>Daftar</b></a></p>
+        <a href="index.html"><b>Kembali ke Beranda</b></a>
+      </div>
+    
+    
+    <script>
+        function myFunction() {
+          var x = document.getElementById("psw");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+        </script>
+</body>
+</html>
