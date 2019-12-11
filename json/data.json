@@ -1,0 +1,16 @@
+[
+    {
+        "nama":"Tiket Pesawat",
+        "harga":"Rp2.000.000",
+        "jumlah": "3",
+        "pajak": "Rp20.000",
+        "total": "Rp6.000.000"
+    },
+    {
+        "nama":"Tiket Pesawat",
+        "harga":"Rp1.000.000",
+        "jumlah": "1",
+        "pajak": "Rp20.000",
+        "total": "Rp1.000.000"
+    }
+]

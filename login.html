@@ -10,19 +10,20 @@
 <body>
     <h1 class="register-title"><img src="pic/logsbiru.png" /></h1> <!--bagian atas-->
   
-    <form action="index.html" method="post"><!--bagian form-->
+    <form method="post"><!--bagian form-->
     
       <div class="container">
         <h2>Selamat Datang Kembali </h2>
         <hr>
     
-        <input type="text" placeholder="Masukkan Email" name="email" required>
+        <input type="text" placeholder="Masukkan Username" id=username required>
     
         <input type="password" placeholder="Masukkan Password" id="psw" required>
     
         <div class=show> <p><input type="checkbox" onclick="myFunction()">Show Password</p></div>
     
-        <button type="submit" class="registerbtn"><b>MASUK</b></button>
+        <input type="button" name="submit" class=registerbtn value="Login" onclick="validation()">
+
       </div>
     </form>
     
@@ -32,7 +33,14 @@
         <a href="index.html"><b>Kembali ke Beranda</b></a>
       </div>
     
+      <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text">Login berhasil selamat datang</p>
+        </div>
     
+
     <script>
         function myFunction() {
           var x = document.getElementById("psw");
@@ -45,3 +53,36 @@
         </script>
 </body>
 </html>
+<script  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+  function validation() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('psw').value;
+      if (username == "user" && password == "user") {
+          modal(true);
+      } else {
+          modal(false);
+          // alert("username / password salah");
+      }
+  }
+  function modal(status) {
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      if (status == true) {
+          $("#modal-text").text("Login berhasil");
+          modal.style.display = "block";
+          span.onclick = function () {
+              modal.style.display = "none";
+              window.location.href = 'index.html';
+              return false;
+          }
+      } else {
+          $("#modal-text").text("Username / password salah");
+          modal.style.display = "block";
+          span.onclick = function () {
+              modal.style.display = "none";
+          }
+      }
+  }
+</script>

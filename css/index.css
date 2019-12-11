@@ -243,17 +243,6 @@
    font-size: 12px;
     }
 
-  svg.heart {   
-  height: 24px;
-  width: 24px;
-  float: right;
-  margin-top: -3px;
-  cursor: pointer;
-      }
-
-  svg.heart:hover {
-  fill: red;    
-  }
         
   svg.arrow {
         

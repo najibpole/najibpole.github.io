@@ -33,56 +33,11 @@
               <div class="col">Total</div>
             </div>
             
-            <div class="layout-inline row">
+            <div id="isi" class="layout-inline row">
               
-              <div class="col col-pro layout-inline">
-                <img src="pic/garudaindonesia.gif" height="20%" width="20%"/>
-                <p>tiket pesawat</p>
-              </div>
               
-              <div class="col col-price col-numeric align-center ">
-                <p>Rp2.000.000</p>
-              </div>
-      
-              <div class="col col-qty layout-inline">
-                <a href="#" class="qty qty-minus">-</a>
-                  <input type="numeric" value="3" />
-                <a href="#" class="qty qty-plus">+</a>
-              </div>
-              
-              <div class="col col-vat col-numeric">
-                <p>Rp20.000</p>
-              </div>
-              <div class="col col-total col-numeric">
-                  <p>Rp6.000.000</p>
-              </div>
             </div>
             
-            <div class="layout-inline row row-bg2">
-      
-              <div class="col col-pro layout-inline">
-                <img src="pic/garudaindonesia.gif" height="20%" width="20%"/>
-                <p>tiket pesawat</p>
-              </div>
-              
-              <div class="col col-price col-numeric align-center ">
-                <p>Rp1.000.000</p>
-              </div>
-      
-              <div class="col col-qty  layout-inline">
-                <a href="#" class="qty qty-minus ">-</a>
-                  <input type="numeric" value="1" />
-                <a href="#" class="qty qty-plus">+</a>
-              </div>
-              
-              <div class="col col-vat col-numeric">
-                <p>Rp20.000</p>
-              </div>
-              <div class="col col-total col-numeric">
-                <p>Rp1.000.000</p>
-              </div>      
-            
-            </div>
             
          
         
@@ -159,6 +114,49 @@
        </footer>
        
    </body>
+
+   <script  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON('https://raw.githubusercontent.com/najibpole/Kelompok-J/master/json/data.json',
+            function (data) {
+                $.each(data, function (n, response) {
+                    $('#isi').append(
+                      `<div class="col col-pro layout-inline">
+                <img src="pic/garudaindonesia.gif" height="20%" width="20%"/>
+                <p>`+response['nama']+`</p>
+              </div>
+              
+              <div class="col col-price col-numeric align-center ">
+                <p>`+response['harga']+`</p>
+              </div>
+      
+              <div class="col col-qty layout-inline">
+                <a href="#" class="qty qty-minus">-</a>
+                  <input type="numeric" value="`+response['jumlah']+`" />
+                <a href="#" class="qty qty-plus">+</a>
+              </div>
+              
+              <div class="col col-vat col-numeric">
+                <p>`+response['pajak']+`</p>
+              </div>
+              <div class="col col-total col-numeric">
+                  <p>`+response['total']+`</p>
+              </div>`
+                    );
+                })
+            });
+    })
+    </script>
+    
+
+
+
+
+
+
+
+
 
    <style>
    html {
